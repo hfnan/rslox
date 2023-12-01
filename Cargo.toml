@@ -1,0 +1,10 @@
+[package]
+name = "rslox"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[features]
+default = ["debug_trace_execution"]
+debug_trace_execution = []
