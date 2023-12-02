@@ -7,12 +7,12 @@ pub fn compile(source: String) {
     loop {
         let token = scanner.scan_token().unwrap();
         if token.line != line {
-            println!("{:4} ", token.line);
+            print!("{:4} ", token.line);
             line = token.line;
         } else {
-            println!("    | ");
+            print!("   | ");
         }
-        println!("{:2?} '{} {}'", token.ty, token.length, token.start);
+        println!("{:2?} '{}'", token.ty, &token.source[token.start..(token.start + token.length)]);
     
         if let TOKEN::EOF = token.ty {
             break;
